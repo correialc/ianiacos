@@ -1,0 +1,114 @@
+\documentclass[
+	12pt,
+	a4paper
+]{article}
+
+
+\usepackage{mathtools}
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+
+\title{Anotações de Estatística}
+\author{Leandro Correia}
+\date{2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Medidas de Tendência Central}
+
+Mostram o valor em torno do qual os dados tendem a agrupar-se.
+
+\subsection{Média Aritmética}
+
+Notações:
+
+\(\bar{x}\) Notação da média aritmática \emph{da amostra}
+
+\(\mu\) Notação da média aritmática \emph{da população}
+
+\[\bar{x} = \sum_{i=1}^{n} x_i \] 
+
+\subsection{Mediana}
+
+Notação: \(\tilde{x}\)
+
+Seja \(n\) o tamanho da amostra:
+\begin{itemize}
+	\item O conjunto de dados da amostra precisa estar ordenado.
+	\item Se \(n\) for ímpar, a mediana será o valor que ocupa a posição \(\frac{n + 1}{2}\)
+	\item Se \(n\) for par, a mediana será a média dos valores que ocupam as posições \(\frac{n}{2}\) e \(\frac{n + 2}{2}\)
+\end{itemize}
+
+\section{Medidas de Posição Relativa}
+
+Mostram pontos de corte na distribuição relativa dos dados da amostra.
+
+\subsection{Percentil}
+
+\[L = \frac{k}{100} \times n\]
+
+Onde:
+
+\(n\) = tamanho da amostra
+
+\(k\) = percentil que se deseja calcular	
+
+\(L\) = posição do percentil na amostra
+
+\begin{itemize}
+    \item Se \(L\) é um número inteiro, o percentil \(P_k\) pode ser obtido pela média 			entre os valores que ocupam as posições \(L\) e \(L+1\).
+    \item Se \(L\) é um número decimal, devemos arredondar \(L\) para o valor interiro 			mais próximo \emph{a maior} e o percentil \(P_k\) será obtido pelo valor que ocupa a 		posição \(L\) já arredondada.      
+\end{itemize}
+
+\subsection{Escore z}
+
+\[z = \frac{x-\bar{x}}{s}\]
+
+\(z\) = \emph{escore z}
+
+\(x\) = valor na amostra a partir do qual se quer medir o \emph{escore z}
+
+\(\bar{x}\) = média aritmética da amostra
+
+\(s\) = desvio padrão da amostra
+
+\section{Medidas de Dispersão ou Variabilidade}
+
+Mostram o grau de afastamento dos valores observados em relação ao ponto central da distribuição dos dados.
+
+\subsection{Variância e Desvio Padrão}
+
+\begin{table}[h]
+	\centering	
+	\caption*{Notações de Variância e Desvio Padrão}
+	\begin{tabular}{l|cc} 
+		Medidas 		& População 	& Amostra 		\\
+		\hline
+		Variância		& \(\sigma^2 \)	& \(s^2\)	\\
+		Desvio Padrão	& \(\sigma \)	& \(s\)
+	\end{tabular}
+\end{table}
+
+Variância (população):
+
+\[ \sigma^2=\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n} \]
+
+Variância (amostra):
+
+\[ s^2=\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1} \]
+
+Desvio Padrão (população):
+
+\[ \sigma=\sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}} \]
+
+Desvio Padrão (amostra):
+
+\[ s=\sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}} \]
+
+\subsection{Coeficiente de Variação}
+
+\[ CV=\frac{s}{\bar{x}} \times 100 \]
+
+\end{document}
