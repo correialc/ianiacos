@@ -1,0 +1,81 @@
+\chapter{Probabilidade}
+
+A \textbf{Probabilidade} é uma médida numérica (variando de 0 a 1) da possibilidade de um evento ocorrer. Ela estuda situações onde os resultados são variáveis:
+\begin{itemize}
+	\item Os resultados possíveis são conhecidos;
+	\item Não de pode saber \textit{a priori} qual deles ocorrerá.
+\end{itemize}
+
+\textbf{Experimentos Aleatórios} são aqueles cujos resultados podem não ser os mesmos, ainda que sejam repetidos sob condições idênticas:
+\begin{itemize}
+	\item O resultado de um experimento aleatório específico não é previamente conhecido;
+	\item Todos os possíveis resultados podem ser descritos.
+\end{itemize}
+
+\textbf{Espaço Amostral} ( \(\Omega\) ) é o conjunto de todos os possíveis resultados de um experimento aleatório:
+\begin{itemize}
+	\item \(\Omega_1 = \{ 1, 2, 3, 4, 5, 6 \} \) - Faces de um dado
+	\item \(\Omega_2 = \{ t \in R \mid t \geq 0 \} \) - Vida útil de uma lâmpada
+\end{itemize}
+
+\textbf{Evento} é um subconjunto do espaço amostral:
+\begin{itemize}
+	\item \(A_1 = \{ 2, 4, 6 \} \) - Obter uma face par do dado
+	\item \(B_2 = \{ t \geq 10000 \} \) - A lâmpada durar pelo menos 10000 minutos
+\end{itemize}
+
+\section{Axiomas de Probabilidade}
+
+Dado um espaço amostral, \(\Omega\), suponha que estamos estudando um evento A. A
+probabilidade do evento A ocorrer é denotada por P(A). A função P(A) só será uma
+probabilidade se ela satisfaz três condições básicas:
+\begin{itemize}
+	\item \( 0 \leq P(A) \leq 1 \)
+	\item \( P(\Omega) = 1 \)
+	\item \( P(A_1 \cup A_2 \cup A_3...) = P(A_1)+P(A_2)+P(A_3)+...\), se os eventos \(A_1, A_2, A_3, ...\) forem disjuntos (mutuamente exclusivos).
+\end{itemize}
+
+\section{Atribuição de Probabilidade aos Elementos de \( \Omega \)}
+
+Visão Clássica:
+
+\[ P(A) = \frac{casos favoráveis}{total de casos} \]
+
+Visão Frequentista:
+
+\[ P(A) = \frac{ocorrências de A}{repetições do experimento} \]
+
+Interseção de Eventos: 
+
+\[ A \cap B \]
+
+Eventos Disjuntos: 
+
+\[ A \cap B = \varnothing \]
+
+União de 2 Eventos:
+
+\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]  
+
+Eventos Complementares:
+
+\[ A \cup B = \Omega \] 
+\[ A \cap B = \varnothing \]
+\[ \bar{A} = B \]
+\[ \bar{B} = A \]
+\[ P(A) = 1 - P(B) \]
+\[ P(\bar{A}) = P(B) = 1 - P(A) \]
+
+\subsection{Probabilidade Condicional}
+
+Probabilidade de um evento A ocorrer dado que um evento B já ocorreu:
+
+\[ P(A \mid B) = \frac{P(A \cap B)}{P(B)} \]
+
+A partir da qual é possível deduzir a \textbf{regra do produto condicional}:
+
+\[ P(A \cap B) = P(A \mid B).P(B) \]
+
+Dois eventos podem ser considerados independentes quando \( P(A \mid B) = P(A) \) e \( P(B \mid A) = P(B) \). É possível deduzir também que, para A e B serem independentes, \( P(A \cap B) = P(A).P(B) \). 
+
+ 
