@@ -1,10 +1,14 @@
 \chapter{Estatística Descritiva}
 
+Compreende a organização, o resumo e, em geral, a simplificação de informações que podem ser muito complexas.
+
 \section{Medidas de Tendência Central}
 
 Mostram o valor em torno do qual os dados tendem a agrupar-se.
 
 \subsection{Média Aritmética}
+
+Representa o valor médio da amostra ou da população. Por estar diretamente relacionada aos valores dos dados analisados, a média é sensível a grande diferenças de valor. 
 
 Notações:
 
@@ -15,6 +19,8 @@ Notações:
 \[\bar{x} = \sum_{i=1}^{n} x_i \] 
 
 \subsection{Mediana}
+
+Representa o valor que divide a amostra ou a população em duas partes de igual tamanho. Diferente do que ocorre com a média aritmética, a mediana é uma medida posicional com relação aos dados, ocupando uma posição central mesmo que os dados analisados possuam grandes diferenças de valor.
 
 Notação: \(\tilde{x}\)
 
@@ -27,7 +33,13 @@ Seja \(n\) o tamanho da amostra:
 
 \section{Medidas de Posição Relativa}
 
-Mostram pontos de corte na distribuição relativa dos dados da amostra.
+Mostram pontos de corte na distribuição relativa dos dados da amostra:
+
+\begin{itemize}
+	\item Quartis: três pontos (Q1, Q2 e Q3) que dividem a amostra em 4 partes de igual tamanho, a 25\% (Q1), 50\% (Q2 ou mediana) e 75\% (Q3);
+	\item Decis: 9 pontos (D1 a D9) que dividem a amostra em 10 partes  de igual tamanho;
+	\item Percentis: 99 pontos (P1 a P99) que dividem a amostra em 100 partes  de igual tamanho. Existem correspondências entre percentis, quartis e decis.
+\end{itemize}
 
 \subsection{Percentil}
 
@@ -48,6 +60,8 @@ Onde:
 
 \subsection{Escore z}
 
+O Escore Z é uma medida que expressa, em unidades de desvio padrão, o quanto um determinado número está distante da média.
+
 \[z = \frac{x-\bar{x}}{s}\]
 
 \(z\) = \emph{escore z}
@@ -62,11 +76,19 @@ Onde:
 
 Mostram o grau de afastamento dos valores observados em relação ao ponto central da distribuição dos dados.
 
+\subsection{Amplitude}
+
+É definida como sendo a diferença entre o maior e o menor valor
+do conjunto de dados. É representada pela letra \textbf{A}.
+
 \subsection{Variância e Desvio Padrão}
+
+Indicam o grau de afastamento dos valores observados em relação à média aritmética. O desvio padrão possui a mesma unidade de medida dos dados observados, enquanto a variância não, mas ambos representam a mesma informação. A tabela \ref{tab:notacoes-var-dp} apresenta as notações da variância e do desvio padrão.
 
 \begin{table}[h]
 	\centering	
 	\caption{Notações de Variância e Desvio Padrão}
+	\label{tab:notacoes-var-dp}
 	\begin{tabular}{l|cc} 
 		Medidas 		& População 	& Amostra 		\\
 		\hline
@@ -93,4 +115,26 @@ Desvio Padrão (amostra):
 
 \subsection{Coeficiente de Variação}
 
+O desvio padrão embora seja a medida de dispersão mais utilizada, mede a dispersão em termos absolutos. O coeficiente de variação (CV) mede a dispersão em termos relativos. O coeficiente de variação é adimensional (não tem unidade de medida), tornando-se útil quando queremos comparar a variabilidade de observações com diferentes unidades de medidas. O CV é expresso em porcentagem. É zero quando não houver variabilidade entre os dados. Quanto menor o coeficiente de variação, mais
+homogêneo é o conjunto de dados.
+
 \[ CV=\frac{s}{\bar{x}} \times 100 \]
+
+\newpage
+
+A tabela \ref{tab:coeficiente-variabilidade} evidencia uma possível classificação de homogeneidade de acordo com o coeficiente de variabilidade.
+
+\begin{table}
+	\centering	
+	\caption{Classificação da Homogeneidade a partir do CV}
+	\label{tab:coeficiente-variabilidade}
+	\begin{tabular}{l|c} 
+		CV 		& Homogeneidade	\\
+		\hline
+		< 10\%		& muito alta	\\
+		de 10\% a 20\%	& alta		\\
+		de 20\% a 30\%	& média		\\
+		> 30\%			& baixa		
+	\end{tabular}
+\end{table}
+
