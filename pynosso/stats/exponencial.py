@@ -8,4 +8,4 @@ def exibir_exp_stats(alpha):
 
 
 def exp_prob(a, b, alpha):
-    return exp(-alpha*a)-exp(-alpha*b)
+    return round(exp(-alpha*a)-exp(-alpha*b), 4)

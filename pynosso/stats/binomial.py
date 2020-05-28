@@ -7,4 +7,4 @@ def exibir_binom_stats(n, p):
 
 def binom_prob(n, p, x):
     dist = binom(n, p)
-    return(dist.pmf(x))
+    return(round(dist.pmf(x),4))

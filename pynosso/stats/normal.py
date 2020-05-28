@@ -6,7 +6,7 @@ from scipy.stats import norm
 # Redução à normal padrão de uma variável X com distribuição normal, 
 # média (med) <> 0 e/ou desvio padrão (dp) <> 1
 def reduzir_normal_padrao(x, med, dp):
-    return (x - med)/dp
+    return round((x - med)/dp,4)
 
 
 # Plota a curva da distribuição normal preenchendo um intervalo de probabilidade de z1 a z2

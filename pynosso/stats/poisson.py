@@ -7,4 +7,4 @@ def exibir_poisson_stats(mu):
 
 def poisson_prob(mu, x):
     dist = poisson(mu)
-    return dist.pmf(x)
+    return round(dist.pmf(x),4)
