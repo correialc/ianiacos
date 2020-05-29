@@ -1,0 +1,51 @@
+\chapter{Inferência Estatística}
+
+A estimação é o processo que consiste em utilizar dados amostrais para estimar os valores de parâmetros populacionais desconhecidos. 
+
+\section{Estimativa Pontual}
+
+A \textbf{estimativa é pontual} quando a estatística amostral origina uma única estimativa do parâmetro, ou seja, um único valor para o parâmetro populacional que se quer estimar:
+
+\begin{table}[h]
+	\centering	
+	\caption{Estimadores dos principais parâmetros populacionais}
+	\label{tab:estimadores}
+	\begin{tabular}{c|c} 
+		Parâmetro	& Estimador	\\
+		\hline
+		\(\mu\)	& \( \bar{x} \)	\\			
+		\(\sigma\) & s		\\
+		\( p \)	& \( \hat{p} \)		
+	\end{tabular}
+\end{table}
+
+Sendo \(\hat{p} = \frac{x}{n}\), onde \textbf{x} representa o número de itens na amostra que apresentam uma característica de interesse e \textbf{n} representa o tamanho da amostra.
+
+
+\section{Estimativa Intervalar ou Intervalo de Confiança}
+
+A \textbf{estimativa é intervalar} quando, a partir da estatística amostral, construímos um intervalo de valores possíveis no qual se admite, sob certa probabilidade, esteja contido o parâmetro populacional.
+
+Um \textbf{intervalo de confiança} está associado a um grau de confiança que é uma
+medida da nossa certeza de que o intervalo contém o parâmetro populacional. O grau de confiança é a probabilidade \(1 - \alpha\) de o intervalo de confiança conter o verdadeiro valor do parâmetro populacional (o grau de confiança é também chamado de nível de confiança ou de coeficiente de confiança).
+
+O \textbf{erro máximo da estimativa} ou \textbf{margem de erro}, denotada por \textbf{E} é a diferença máxima provável entre a média amostral observada e a verdadeira média populacional.
+
+\[E = z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}}\]
+
+\section{Determinação do Tamanho da Amostra}
+
+A determinação do tamanho de uma amostra é um problema de grande importância, porque amostras desnecessariamente grandes acarretam desperdício de tempo e de dinheiro.
+
+Quando o desvio padrão da população é conhecido\footnote{Aproximar sempre para o maior inteiro mais próximo.}:
+
+\[ n = \frac{z_\frac{\alpha}{2}\sigma}{E}\]
+
+Quando não é possível determinar o desvio padrão da população:
+\begin{alineas}
+	\item Utilizar a regra prática para estimar o desvio padrão da seguinte maneira: \( \frac{amplitude}{4} \)
+	\item Realizar um estudo piloto, iniciando o processo de amostragem. Com base na coleção de pelo menos 31 valores amostrais selecionados aleatoriamente, calcular o desvio padrão amostral \textbf{s} e utiliza-lo no lugar de \(\sigma\).
+\end{alineas}
+
+
+
