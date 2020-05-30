@@ -37,9 +37,11 @@ O \textbf{erro máximo da estimativa} ou \textbf{margem de erro}, denotada por \
 
 A determinação do tamanho de uma amostra é um problema de grande importância, porque amostras desnecessariamente grandes acarretam desperdício de tempo e de dinheiro.
 
+\subsection{Cálculo de n para a Média em População Infinita}
+
 Quando o desvio padrão da população é conhecido\footnote{Aproximar sempre para o maior inteiro mais próximo.}:
 
-\[ n = \frac{z_\frac{\alpha}{2}\sigma}{E}\]
+\[n = (\frac{z_\frac{\alpha}{2}\sigma}{E})^2\]
 
 Quando não é possível determinar o desvio padrão da população:
 \begin{alineas}
@@ -47,5 +49,25 @@ Quando não é possível determinar o desvio padrão da população:
 	\item Realizar um estudo piloto, iniciando o processo de amostragem. Com base na coleção de pelo menos 31 valores amostrais selecionados aleatoriamente, calcular o desvio padrão amostral \textbf{s} e utiliza-lo no lugar de \(\sigma\).
 \end{alineas}
 
+\subsection{Cálculo de n e E para a Média em População Finita}
 
+Se a população é finita é necessário modificar a margem de erro (E), com a inclusão de um fator de correção para população finita, sendo N o tamanho conhecido da população.
 
+\[E = z\frac{\sigma}{\sqrt{n}}\sqrt{\frac{N-n}{N-1}}\]
+
+\[n = \frac{N\sigma^2z^2}{(N-1)E^2+\sigma^2z^2} \]
+
+\subsection{Intervalo de Confiança da Média para \(\sigma\) Desconhecido}
+
+Vimos que a distribuição Z é adequada quando o desvio padrão populacional (\(\sigma\)) é conhecido. Porém, se não conhecemos (\(\sigma\)), podemos utilizar a distribuição t-Student. O parâmetro da distribuição t-Student é o grau de liberdade (g.l.), definido
+por n-1.
+
+\[E = t_\frac{\alpha}{2}\frac{s}{\sqrt{n}}\]
+
+Onde \(t_\frac{\alpha}{2}\) tem \(n-1\) graus de liberdade.
+
+\section{Intervalo de Confiança para a Proporção}
+
+Assim como a média amostral é a melhor estimativa pontual para a média populacional, a proporção amostral (\(\hat{p}\)) é a melhor estimativa pontual da proporção populacional (\({p}\)), supondo que \(n.\hat{p}\geq5\) e \(n.(1-\hat{p})\geq5\)\footnote{Em virtude da construção de intervalos de confiança para a proporção utilizar a distribuição normal como aproximação da distribuição de proporções amostrais}.
+
+\[E = z_\frac{\alpha}{2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]
