@@ -6,6 +6,7 @@ from stats import normal as nm
 from stats import inferencia as inf
 
 
+# Distribuicao Binomial
 class TestBinomDist(unittest.TestCase):
     def test_binom_prob(self):
         p = 0.02
@@ -15,6 +16,7 @@ class TestBinomDist(unittest.TestCase):
         self.assertEqual(prob, 0.0153)
 
 
+# Distribuition de Poisson
 class TestPoissonDist(unittest.TestCase):
     def test_poisson_prob(self):
         mu = 0.3
@@ -23,6 +25,7 @@ class TestPoissonDist(unittest.TestCase):
         self.assertEqual(prob, 0.0333)
 
 
+# Distribution Exponencial
 class TestExpDist(unittest.TestCase):
     def test_exp_prob(self):
         alpha = 1/8000 
@@ -32,6 +35,7 @@ class TestExpDist(unittest.TestCase):
         self.assertEqual(prob, 0.3935)
 
 
+# Distribuicao Normal
 class TestNormalDist(unittest.TestCase):
     def test_reduzir_normal_padrao(self):
         med = 140
@@ -41,24 +45,97 @@ class TestNormalDist(unittest.TestCase):
         self.assertEqual(z, 1.28)
 
 
-class TestInferencia(unittest.TestCase):
-    def test_margem_erro(self):
-        dp_pop = 1.5
+# Inferencia Estatistica (Media)
+class TestInferenciaMedia(unittest.TestCase):
+    
+    # Distribuicao: Normal Reduzida
+    # Populacao: Infinita
+    # Desvio Padrao Populacional: Conhecido
+    def test_media_margem_erro_pop_infinita(self):
+        sigma = 1.5
         n = 20
         z = 1.64
-        self.assertEqual(inf.margem_erro(z, dp_pop, n), 0.5501)
-    
-    def test_tamanho_amostra_infinita(self):
-        dp_pop = 6250 
+        self.assertEqual(inf.media_margem_erro(z, sigma, n), 0.5501)
+
+
+    # Distribuicao: Normal Reduzida
+    # Populacao: Infinita
+    # Desvio Padrao Populacional: Conhecido
+    def test_media_margem_erro_pop_finita(self):
+        n = 16      # (grau de liberdade = 15)
+        t = 2.602
+        s = 40
+        self.assertEqual(inf.media_margem_erro(t, s, n), 26.02)
+ 
+
+    # Distribuicao: Normal Reduzida
+    # Populacao: Infinita
+    # Desvio Padrao Populacional: Conhecido
+    def test_media_tamanho_amostra_pop_infinita(self):
+        sigma = 6250 
         z = 1.96
         e = 1000
-        self.assertEqual(inf.tamanho_amostra(z, dp_pop, e), 151)
+        self.assertEqual(inf.media_tamanho_amostra(z, sigma, e), 151)
 
-    def test_tamanho_amostra_finita(self):
-        dp_pop = 7000 
+
+    # Distribuicao: Normal Reduzida
+    # Populacao: Finita
+    # Desvio Padrao Populacional: Conhecido
+    def test_media_tamanho_amostra_pop_finita_normal(self):
+        sigma = 7000 
         z = 1.64
         e = 600
-        self.assertEqual(inf.tamanho_amostra(z, dp_pop, e, popfin=True, N=420), 196)
+        self.assertEqual(inf.media_tamanho_amostra(z, sigma, e, N=420), 196)
+
+
+# Inferencia Estatistica (Proporcao)
+class TestInferenciaProporcao(unittest.TestCase):
+    
+    def test_prop_margem_erro_condicao_invalida(self):
+        n = 125
+        x = 1 
+        pa = x/n    
+        z = 1.51
+
+        # Condicao invalida: (n*pa) menor do 5 
+        with self.assertRaises(ValueError):
+            inf.prop_margem_erro(z, pa, n)
+
+        x = 124
+        pa = x/n
+
+        # Condicao invalida: n*(1 - pa) menor do 5
+        with self.assertRaises(ValueError):
+            inf.prop_margem_erro(z, pa, n)
+
+
+    # Distribuicao: Normal Reduzida
+    # Populacao: Infinita
+    def test_prop_margem_erro_pop_infinita(self):
+        x = 7
+        n =125
+        pa = x/n
+        z = 1.51
+        self.assertEqual(inf.prop_margem_erro(z, pa, n), 0.0311)
+
+
+    # Distribuicao: Normal Reduzida
+    # Populacao: Infinita
+    def test_prop_tamanho_amostra_pop_infinita(self):
+        e = 0.03
+        pa = 0.18
+        z = 1.96
+        self.assertEqual(inf.prop_tamanho_amostra(z, pa, e), 631)
+
+    
+    # Distribuicao: Normal Reduzida
+    # Populacao: Finita
+    def test_prop_tamanho_amostra_pop_finita(self):
+        e = 0.05
+        N = 550
+        z = 2.17
+        pa = 0.23
+        self.assertEqual(inf.prop_tamanho_amostra(z, pa, e, N=N), 208)
 
 
 if __name__ == '__main__':
