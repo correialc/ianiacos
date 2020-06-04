@@ -7,10 +7,13 @@
 ]{abntex2}
 
 \usepackage{lmodern}
+\usepackage{relsize}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}	
 \usepackage{mathtools}
 \usepackage{amssymb}
+
+\newcommand{\beq}[1]{\mathlarger{#1}}
 
 \titulo{Anotações de Estatística}
 \autor{Leandro Coelho Correia}
@@ -30,6 +33,7 @@
 \include{descritiva/estatistica-descritiva}
 \include{probabilidade/probabilidade}
 \include{inferencia/inferencia}
+\include{testes-hipoteses/testes-hipoteses}
 
 \begin{apendicesenv}
 \include{apendices/tab-prob-normal-padrao}
