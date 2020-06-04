@@ -19,7 +19,7 @@ A \textbf{estimativa é pontual} quando a estatística amostral origina uma úni
 	\end{tabular}
 \end{table}
 
-Sendo \(\hat{p} = \frac{x}{n}\), onde \textbf{x} representa o número de itens na amostra que apresentam uma característica de interesse e \textbf{n} representa o tamanho da amostra.
+Sendo \(\beq{ \hat{p} = \frac{x}{n} }\), onde \textbf{x} representa o número de itens na amostra que apresentam uma característica de interesse e \textbf{n} representa o tamanho da amostra.
 
 
 \section{Estimativa Intervalar ou Intervalo de Confiança}
@@ -31,17 +31,17 @@ medida da nossa certeza de que o intervalo contém o parâmetro populacional. O 
 
 O \textbf{erro máximo da estimativa} ou \textbf{margem de erro}, denotada por \textbf{E} é a diferença máxima provável entre a média amostral observada e a verdadeira média populacional.
 
-\[E = z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}}\]
+\[\beq{ E = z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}} }\]
 
 \section{Determinação do Tamanho da Amostra}
 
 A determinação do tamanho de uma amostra é um problema de grande importância, porque amostras desnecessariamente grandes acarretam desperdício de tempo e de dinheiro.
 
-\subsection{Cálculo de n para a Média em População Infinita}
+\subsection{Tamanho da Amostra para a Média em População Infinita}
 
 Quando o desvio padrão da população é conhecido\footnote{Aproximar sempre para o maior inteiro mais próximo.}:
 
-\[n = (\frac{z_\frac{\alpha}{2}\sigma}{E})^2\]
+\[\beq{ n = (\frac{z_\frac{\alpha}{2}\sigma}{E})^2 }\]
 
 Quando não é possível determinar o desvio padrão da população:
 \begin{alineas}
@@ -49,20 +49,20 @@ Quando não é possível determinar o desvio padrão da população:
 	\item Realizar um estudo piloto, iniciando o processo de amostragem. Com base na coleção de pelo menos 31 valores amostrais selecionados aleatoriamente, calcular o desvio padrão amostral \textbf{s} e utiliza-lo no lugar de \(\sigma\).
 \end{alineas}
 
-\subsection{Cálculo de n e E para a Média em População Finita}
+\subsection{Tamanho da Amostra para a Média em População Finita}
 
 Se a população é finita é necessário modificar a margem de erro (E), com a inclusão de um fator de correção para população finita, sendo N o tamanho conhecido da população.
 
-\[E = z\frac{\sigma}{\sqrt{n}}\sqrt{\frac{N-n}{N-1}}\]
+\[\beq{ E = z\frac{\sigma}{\sqrt{n}}\sqrt{\frac{N-n}{N-1}} }\]
 
-\[n = \frac{N\sigma^2z^2}{(N-1)E^2+\sigma^2z^2} \]
+\[\beq{ n = \frac{N\sigma^2z^2}{(N-1)E^2+\sigma^2z^2} }\]
 
 \subsection{Intervalo de Confiança da Média para \(\sigma\) Desconhecido}
 
 Vimos que a distribuição Z é adequada quando o desvio padrão populacional (\(\sigma\)) é conhecido. Porém, se não conhecemos (\(\sigma\)), podemos utilizar a distribuição t-Student. O parâmetro da distribuição t-Student é o grau de liberdade (g.l.), definido
 por n-1.
 
-\[E = t_\frac{\alpha}{2}\frac{s}{\sqrt{n}}\]
+\[\beq{ E = t_\frac{\alpha}{2}\frac{s}{\sqrt{n}} }\]
 
 Onde \(t_\frac{\alpha}{2}\) tem \(n-1\) graus de liberdade.
 
@@ -70,4 +70,19 @@ Onde \(t_\frac{\alpha}{2}\) tem \(n-1\) graus de liberdade.
 
 Assim como a média amostral é a melhor estimativa pontual para a média populacional, a proporção amostral (\(\hat{p}\)) é a melhor estimativa pontual da proporção populacional (\({p}\)), supondo que \(n.\hat{p}\geq5\) e \(n.(1-\hat{p})\geq5\)\footnote{Em virtude da construção de intervalos de confiança para a proporção utilizar a distribuição normal como aproximação da distribuição de proporções amostrais}.
 
-\[E = z_\frac{\alpha}{2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]
+\[\beq{ E = z_\frac{\alpha}{2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} }\]
+
+\subsection{Tamanho da Amostra para a Proporção em População Ininita}
+
+A expressão para o cálculo do tamanho amostral pode ser obtida a partir da
+expressão da margem de erro\footnote{Lembrando que, se o tamanho da amostra calculado não for um número inteiro, devemos arredondá-lo para o próximo inteiro mais elevado.}. É interessante notar que a expressão em questão depende de \(\hat{p}\) que pode ser obtido por meio de um estudo piloto ou de conhecimentos prévios. Porém, quando não dispomos de tais informações, podemos atribuir o valor 0,5 para \(\hat{p}\).
+
+\[\beq{ n = z^2_\frac{\alpha}{2}\frac{\hat{p}(1-\hat{p})}{E^2} }\]
+
+\subsection{Tamanho da Amostra para a Proporção em População Finita}
+
+Se a população é finita é necessário modificar a margem de erro (E), com a inclusão de um fator de correção para população finita.
+
+\[\beq{ E = z_\frac{\alpha}{2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\sqrt{\frac{N-n}{N-1}} }\]
+
+\[\beq{ n = \frac{N.\hat{p}(1-\hat{p}).z^2}{\hat{p}(1-\hat{p}).z^2+(N-1).E^2} }\]
