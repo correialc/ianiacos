@@ -55,7 +55,7 @@ muito comuns os valores 0,05 e 0,01;
 \item Formular uma conclusão que descreva a conseqüência prática dos dados e dos cálculos.
 \end{alineas}
 
-\section{Teste z para uma Amostra}
+\section{Teste z para uma Amostra (\(\sigma\) conhecido)}
 
 O teste z é utilizado em testes de hipóteses para a média quando valor do desvio padrão (\(\sigma\) é conhecido. Identificadas as hipóteses estatísticas (\(H_0\) e \(H_a\)) e definido o nível de significância (\(\alpha\)), podemos proceder ao cálculo da estatística de teste utilizando a fórmula a seguir.
 
@@ -63,4 +63,35 @@ O teste z é utilizado em testes de hipóteses para a média quando valor do des
 
 Onde \(\mu_0\) representa o valor da média que está sendo testado, \(\sigma\) representa o desvio padrão populacional, n é o tamanho da amostra e \(\hat{x}\) é a média da amostra.
 
+\subsection{Com base no nível de significância (\(\alpha\))}
+
+\begin{itemize}
+	\item Fornecidos: \(\alpha\)\footnote{Lembrar de que \(\alpha\) é uma probabilidade.}, \(\mu_0\), \(\hat{x}\) e \(\sigma\);
+	\item Aplicar a fórmula de \(z_{teste}\);
+	\item Encontrar \(z_{\alpha}\) considerando:
+	\begin{itemize}
+		\item O sinal de \(z_{teste}\)
+		\item O tipo de hipótese (unilateral à esquerda, à direita ou bilateral);
+		\item A interpretação da probabilidade na Tabela da Normal Reduzida;
+		\item O valor crítico é o \(z_{\alpha}\) e a região crítica determinada por \(\alpha\). 
+	\end{itemize}
+\end{itemize}		
+	
+\subsection{Com base no valor \(p\)}
+
+\begin{itemize}
+	\item Fornecidos: \(\alpha\)\footnote{Lembrar de que \(\alpha\) é uma probabilidade.}, \(\mu_0\), \(\hat{x}\) e \(\sigma\);
+	\item Aplicar a fórmula de \(z_{teste}\);
+	\item Encontrar \(p\) considerando:
+	\begin{itemize}
+		\item O sinal de \(z_{teste}\)
+		\item O tipo de hipótese (unilateral à esquerda, à direita ou bilateral);
+		\item A interpretação da probabilidade na Tabela da Normal Reduzida;
+		\item O valor crítico é o \(z_{teste}\) e a região crítica é  \(p\). 
+	\end{itemize}
+\end{itemize}		
+
+\subsection{Com base no intervalo de confiança}
+
+A correspondência direta entre um intervalo de confiança e um teste de hipótese pode ser feita somente quando o teste é bilateral.
 
