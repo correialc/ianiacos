@@ -4,7 +4,7 @@ from stats import exponencial as xp
 from stats import poisson as po
 from stats import normal as nm
 from stats import inferencia as inf
-
+from stats import hipoteses as hip
 
 # Distribuicao Binomial
 class TestBinomDist(unittest.TestCase):
@@ -136,6 +136,16 @@ class TestInferenciaProporcao(unittest.TestCase):
         z = 2.17
         pa = 0.23
         self.assertEqual(inf.prop_tamanho_amostra(z, pa, e, N=N), 208)
+
+
+# Testes de Hipoteses
+class TestTestesHipoteses(unittest.TestCase):
+    def test_testez(self):
+        xhat = 6300
+        mu0 = 6500
+        sigma = 2000
+        n = 55
+        self.assertEqual(hip.testez(xhat, mu0, sigma, n),-0.7416)
 
 
 if __name__ == '__main__':
