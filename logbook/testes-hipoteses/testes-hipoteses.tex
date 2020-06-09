@@ -66,28 +66,28 @@ Onde \(\mu_0\) representa o valor da média que está sendo testado, \(\sigma\) 
 \subsection{Com base no nível de significância (\(\alpha\))}
 
 \begin{itemize}
-	\item Fornecidos: \(\alpha\)\footnote{Lembrar de que \(\alpha\) é uma probabilidade.}, \(\mu_0\), \(\hat{x}\) e \(\sigma\);
-	\item Aplicar a fórmula de \(z_{teste}\);
+	\item Fornecidos: \(\alpha\), \(\mu_0\), \(\hat{x}\) e \(\sigma\)
+	\item Aplicar a fórmula de \(z_{teste}\)
 	\item Encontrar \(z_{\alpha}\) considerando:
 	\begin{itemize}
 		\item O sinal de \(z_{teste}\)
-		\item O tipo de hipótese (unilateral à esquerda, à direita ou bilateral);
-		\item A interpretação da probabilidade na Tabela da Normal Reduzida;
-		\item O valor crítico é o \(z_{\alpha}\) e a região crítica determinada por \(\alpha\). 
+		\item O tipo de hipótese (unilateral à esquerda, à direita ou bilateral)
+		\item A interpretação da probabilidade na Tabela da Normal Reduzida
 	\end{itemize}
 \end{itemize}		
 	
 \subsection{Com base no valor \(p\)}
 
 \begin{itemize}
-	\item Fornecidos: \(\alpha\)\footnote{Lembrar de que \(\alpha\) é uma probabilidade.}, \(\mu_0\), \(\hat{x}\) e \(\sigma\);
-	\item Aplicar a fórmula de \(z_{teste}\);
+	\item Fornecidos: \(\alpha\), \(\mu_0\), \(\hat{x}\) e \(\sigma\)
+	\item Aplicar a fórmula de \(z_{teste}\)
 	\item Encontrar \(p\) considerando:
 	\begin{itemize}
 		\item O sinal de \(z_{teste}\)
-		\item O tipo de hipótese (unilateral à esquerda, à direita ou bilateral);
-		\item A interpretação da probabilidade na Tabela da Normal Reduzida;
-		\item O valor crítico é o \(z_{teste}\) e a região crítica é  \(p\). 
+		\item O tipo de hipótese: unilateral à esquerda, à direita ou bilateral 
+		\item \(p\) acompanha \(H_a\)
+		\item A interpretação da probabilidade na Tabela da Normal Reduzida
+		\item Interpretação: comparar \(p\) e \(\alpha\). Se \(p \leq \alpha\) a hipótese nula deve ser rejeitada.
 	\end{itemize}
 \end{itemize}		
 
@@ -95,3 +95,34 @@ Onde \(\mu_0\) representa o valor da média que está sendo testado, \(\sigma\) 
 
 A correspondência direta entre um intervalo de confiança e um teste de hipótese pode ser feita somente quando o teste é bilateral.
 
+\section{Teste t para uma amostra (\(\sigma\) desconhecido)}
+
+O teste t é utilizado em testes de hipóteses para a média quando valor do desvio padrão (\(\sigma\) é desconhecido. Nesse caso, deve utilizar o desvio padrão amostral (\(s\)) e a distribuição t-Student. Identificadas as hipóteses estatísticas (\(H_0\) e \(H_a\)) e definido o nível de significância (\(\alpha\)), podemos proceder ao cálculo da estatística de teste utilizando a fórmula a seguir.
+
+\[\beq{ t_{teste} = \frac{\hat{x}-\mu_0}{\frac{s}{\sqrt{n}}} } \]
+
+Onde \(\mu_0\) representa o valor da média que está sendo testado, \(s\) representa o desvio padrão amostral, n é o tamanho da amostra e \(\hat{x}\) é a média da amostra.
+
+O valor crítico é obtido na tabela t-Student, a partir do número de graus de liberdade (n -1). Após determinar o número de graus de liberdade (na linha da tabela) e localizar, na coluna, o valor correspondente à área da cauda que se deseja obter, o valor crítico será o valor que corresponde ao cruzamento da linha e da coluna que foram determinados. Lembrando que se um valor crítico está localizado na cauda esquerda, devemos considerá-lo negativo.
+
+\subsection{Com base no valor \(p\)}
+
+\begin{itemize}
+	\item Fornecidos: \(\alpha\)\footnote{Lembrar de que \(\alpha\) é uma probabilidade.}, \(\mu_0\), \(\hat{x}\) e \(s\)
+	\item Aplicar a fórmula para encontrar o \(t_{teste}\)
+	\item Encontrar \(p\) considerando:
+	\begin{itemize}
+		\item O sinal de \(t_{teste}\)
+		\item O tipo de hipótese (unilateral à esquerda, à direita ou bilateral)
+		\item A interpretação da probabilidade na Tabela da t-Student:
+			\begin{itemize}
+				\item Buscar o valor mais próximo do \(t_{teste}\) na linha do grau de liberdade
+				\item O valor de \(p\) é o cabeçalho correspondente ao valor encontrado na tabela t-Student
+			\end{itemize}
+		\item Interpretação: comparar \(p\) e \(\alpha\). Se \(p \leq \alpha\) a hipótese nula deve ser rejeitada.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Com base no intervalo de confiança}
+
+A correspondência direta entre um intervalo de confiança e um teste de hipótese pode ser feita somente quando o teste é bilateral.
