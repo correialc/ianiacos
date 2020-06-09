@@ -140,19 +140,31 @@ class TestInferenciaProporcao(unittest.TestCase):
 
 # Testes de Hipoteses
 class TestTestesHipoteses(unittest.TestCase):
-    def test_testez(self):
+    
+    # Teste z para a media
+    def test_media_testez(self):
         xhat = 6300
         mu0 = 6500
         sigma = 2000
         n = 55
-        self.assertEqual(hip.testez(xhat, mu0, sigma, n),-0.7416)
+        self.assertEqual(hip.media_testez(xhat, mu0, sigma, n), -0.7416)
 
-    def test_testet(self):
+    # Teste t para a media
+    def test_media_testet(self):
         xhat = 50
         mu0 = 60
         s = 20
         n = 9
-        self.assertEqual(hip.testez(xhat, mu0, s, n), -1.5)
+        self.assertEqual(hip.media_testet(xhat, mu0, s, n), -1.5)
+
+
+    # Teste z para a proporcao
+    def test_prop_testez(self):
+        n = 821
+        phat = 46/n
+        p0 = 0.078
+        self.assertEqual(hip.prop_testez(phat, p0, n), -2.3475)
+
 
 if __name__ == '__main__':
     unittest.main()
