@@ -32,16 +32,14 @@ automaticamente determinado. Valem as seguintes considerações de ordem prátic
 \begin{alineas}
 \item Para \(\alpha\) fixo, um aumento do tamanho n da amostra ocasiona uma redução
 de \(\beta\); isto é, uma amostra maior reduz a chance de cometermos o erro de aceitar a hipótese nula quando ela é falsa.
-\item Para um tamanho n, fixo, de amostra, uma diminuição de \(\alpha\) acarreta um
-aumento de \(\beta\); reciprocamente, um aumento de \(\alpha\) acarreta uma diminuição de \(\beta\).
+\item Para um tamanho n, fixo, de amostra, uma diminuição de \(\alpha\) acarreta um aumento de \(\beta\); reciprocamente, um aumento de \(\alpha\) acarreta uma diminuição de \(\beta\).
 \item Para reduzir \(\alpha\) e \(\beta\), devemos aumentar o tamanho da amostra.
 \end{alineas}
 
 \section{Estatística de Teste, Região Crítica e Valor Crítico}
 
 A \textbf{estatística de teste} é uma estatística amostral, ou um valor baseado nos dados
-amostrais. Utiliza-se uma estatística de teste para tomar uma decisão sobre a rejeição
-ou não da hipótese nula. A \textbf{região crítica} é o conjunto de todos os valores da estatística de teste que levam à rejeição da hipótese nula. O \textbf{valor crítico} é o valor, ou valores, que separa(m) a região crítica dos valores da estatística de teste que não levam à rejeição da hipótese nula. Os valores críticos dependem da natureza da hipótese nula, da distribuição amostral principal, e do nível de significância.
+amostrais. Utiliza-se uma estatística de teste para tomar uma decisão sobre a rejeição ou não da hipótese nula. A \textbf{região crítica} é o conjunto de todos os valores da estatística de teste que levam à rejeição da hipótese nula. O \textbf{valor crítico} é o valor, ou valores, que separa(m) a região crítica dos valores da estatística de teste que não levam à rejeição da hipótese nula. Os valores críticos dependem da natureza da hipótese nula, da distribuição amostral principal, e do nível de significância.
 
 O método clássico de testes de hipóteses  utilizando região crítica constiste nos seguintes passos:
 \begin{alineas}
@@ -126,3 +124,20 @@ O valor crítico é obtido na tabela t-Student, a partir do número de graus de 
 \subsection{Com base no intervalo de confiança}
 
 A correspondência direta entre um intervalo de confiança e um teste de hipótese pode ser feita somente quando o teste é bilateral.
+
+\section{Teste de Hipóteses para a Proporção}
+
+Os testes de hipóteses para proporções são adequados quando os dados sob análise consistem de contagens ou frequências de itens. A finalidade de tais testes é avaliar afirmações sobre a proporção (ou percentagem) de uma população.
+
+Suposições:
+\begin{itemize}
+	\item Condições para um experimento binomial
+	\item Condições \(n.p_0\geq5\) e \(n.(1-p_0)\geq5\)
+\end{itemize}
+
+Estatística de teste:
+
+ \[\beq{ z_{teste} = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} }\]
+ 
+Em muitos aspectos, o teste de hipóteses para uma proporção se assemelha grandemente ao teste z, principalmente pelo fato de que utilizam a mesma distribuição de probabilidades. Dessa forma, a região crítica, o valor crítico e o valor p para o teste de proporção são obtidos exatamente da mesma maneira que o teste z para uma média.
+
