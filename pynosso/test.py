@@ -147,6 +147,12 @@ class TestTestesHipoteses(unittest.TestCase):
         n = 55
         self.assertEqual(hip.testez(xhat, mu0, sigma, n),-0.7416)
 
+    def test_testet(self):
+        xhat = 50
+        mu0 = 60
+        s = 20
+        n = 9
+        self.assertEqual(hip.testez(xhat, mu0, s, n), -1.5)
 
 if __name__ == '__main__':
     unittest.main()
