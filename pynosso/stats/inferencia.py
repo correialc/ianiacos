@@ -9,7 +9,7 @@ def print_intervalo_confianca(val, e, percent=False):
 
 def media_margem_erro(vc, dp, n, N=None):
     # vc: Variavel Critica:
-    #   z de alpha/2, para Distribuicao Normal Reduzida
+    #   z de (1 - alpha)/2, para Distribuicao Normal Reduzida
     #   t de alpha/2, para Distribuicao t-Student
 
     # dp: Desvio Padrao:
@@ -24,7 +24,7 @@ def media_margem_erro(vc, dp, n, N=None):
 
 def media_tamanho_amostra(vc, dp, e, N=None):
     # vc: Variavel Critica:
-    #   z de alpha/2, para Distribuicao Normal Reduzida
+    #   z de (1 - alpha)/2, para Distribuicao Normal Reduzida
     #   t de alpha/2, para Distribuicao t-Student
 
     # dp: Desvio Padrao:
@@ -39,7 +39,7 @@ def media_tamanho_amostra(vc, dp, e, N=None):
 
 def prop_margem_erro(vc, pa, n, N=None):
     # vc: Variavel Critica:
-    #   z de alpha/2, para Distribuicao Normal Reduzida
+    #   z de (1 - alpha)/2, para Distribuicao Normal Reduzida
     #   t de alpha/2, para Distribuicao t-Student
     
     # pa: Proporcao Amostral
@@ -56,7 +56,7 @@ def prop_margem_erro(vc, pa, n, N=None):
 
 def prop_tamanho_amostra(vc, pa, e, N=None):
     # vc: Variavel Critica:
-    #   z de alpha/2, para Distribuicao Normal Reduzida
+    #   z de (1 - alpha)/2, para Distribuicao Normal Reduzida
     #   t de alpha/2, para Distribuicao t-Student
     
     # pa: Proporcao Amostral
