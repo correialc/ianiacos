@@ -250,3 +250,30 @@ Suposições:
 \[\beq{ \bar{d} \pm t_{n-1;\frac{\alpha}{2}} \times \frac{s_d}{\sqrt{n}}  }\]
 	
 \end{alineas}
+
+\section{Comparação de Duas Variâncias: Teste Bilateral}
+
+Esse teste é, muitas vezes, usado em conexão com o teste t-Sudent para duas médias (amostras
+independentes), em que é necessário verificar a homocedasticidade (igualdade) ou
+heterocedasticidade (diferença) das variâncias. Para duas amostras aleatórias e independentes, de tamanhos \(n_1\) e \(n_2\), retiradas de duas populações normais com variâncias \(\sigma_1^2\) e
+\(\sigma_2^2\). Desejamos testar a hipótese bilateral: 
+
+\[H_0: \sigma_1^2 = \sigma_2^2\]
+
+\[H_a: \sigma_1^2 \neq \sigma_2^2\]
+
+Estatística de teste:
+
+\[ F = \frac{\sigma_1^2}{\sigma_2^2} \]
+
+Valores críticos:
+
+\[\beq{ F_L = \frac{1}{F_{n_2-1;n1-1;\frac{\alpha}{2}}} }\]
+
+\[\beq{ F_R = F_{n_1-1;n2-1;\frac{\alpha}{2}} }\]
+
+Os valores \( F_{n_2-1;n1-1;\frac{\alpha}{2}} \) e \(F_{n_1-1;n2-1;\frac{\alpha}{2}}\) são encontrados na  tabela F. Para um nível de significância \(\alpha\):
+\begin{itemize}
+	\item Rejeitar \(H_0\) se \(F < F_L\) ou se \(F>F_R\)
+	\item Caso contrário, não rejeitamos \(H_0\)
+\end{itemize} 
