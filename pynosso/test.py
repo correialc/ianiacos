@@ -166,5 +166,22 @@ class TestTestesHipoteses(unittest.TestCase):
         self.assertEqual(hip.prop_testez(phat, p0, n), -2.3475)
 
 
+    # Teste z para duas amostras (proporcao)
+    def test_prop_testez_duas_amostras(self):
+        n1 = 134
+        n2 = 145
+        p1 = 122/n1
+        p2 = 127/n2
+        self.assertEqual(hip.prop_testez_duas_amostras(p1, p2, n1, n2), 0.9317)
+
+
+    # Teste t para duas amostras dependentes (media)
+    def test_media_testet_amostras_dependentes(self):
+        di_med = 11.4
+        di_std = 8.6197
+        n = 5
+        self.assertEqual(hip.media_testet_amostras_dependentes(di_med, di_std, n), 2.9573)
+
+
 if __name__ == '__main__':
     unittest.main()
