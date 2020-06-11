@@ -9,7 +9,7 @@
 \usepackage{lmodern}
 \usepackage{relsize}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}	
+\usepackage[utf8]{inputenc}
 \usepackage{mathtools}
 \usepackage{amssymb}
 
@@ -20,6 +20,10 @@
 \local{Salvador}
 \data{2020}
 
+\setlength{\parindent}{0.6cm}
+\setlength{\parskip}{0.2cm}
+\makeindex
+
 \begin{document}
 
 \selectlanguage{brazil}
@@ -27,6 +31,10 @@
 
 \pretextual
 \imprimircapa
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
 
 \textual
 \include{introducao/introducao}
