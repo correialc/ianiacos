@@ -141,3 +141,96 @@ Estatística de teste:
  
 Em muitos aspectos, o teste de hipóteses para uma proporção se assemelha grandemente ao teste z, principalmente pelo fato de que utilizam a mesma distribuição de probabilidades. Dessa forma, a região crítica, o valor crítico e o valor p para o teste de proporção são obtidos exatamente da mesma maneira que o teste z para uma média.
 
+\section{Teste z para Comparação de Duas Proporções}
+
+Um teste z de duas amostras é usado para testar a diferença entre duas proporções \(p_1\) e \(p_2\) quando uma amostra é selecionada aleatoriamente de cada população.
+
+Condições:
+\begin{itemize}
+	\item As amostras devem ser selecionadas aleatoriamente.
+	\item As amostras devem ser independentes.
+	\item As amostras devem ser grandes o suficiente para usar uma distribuição normal de amostragem (\( n_1p_1 > 5, n_1q_1 > 5, n_2p_2 > 5 \) e \( n_2q_2 > 5. \)).
+\end{itemize}
+
+Notação:
+\begin{itemize}
+	\item \(n_1 = \) tamanho da 1\textsuperscript{a} amostra
+	\item \(n_2 = \) tamanho da 2\textsuperscript{a} amostra
+	\item \(x_1 = \) número de sucessos da 1\textsuperscript{a} amostra	
+	\item \(x_2 = \) número de sucessos da 2\textsuperscript{a} amostra		
+	\item \(\hat{p}_1 = \) proporção de sucessos da 1\textsuperscript{a} amostra	
+	\item \(\hat{p}_2 = \) proporção de sucessos da 2\textsuperscript{a} amostra		
+\end{itemize}
+
+\subsection{Abordagem pelo valor p}
+
+Estatística de teste:
+
+\[\beq{ z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\frac{\bar{p}(1-\bar{p})}{n_1}+\frac{\bar{p}(1-\bar{p})}{n_2}} }}\]
+
+onde, a estimativa ponderada para \(p_1\) e \(p_2\) pode ser obtida por:
+
+\[\bar{p}=\frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1+n_2}\]
+
+Conclusão:
+\begin{itemize}
+	\item Se \(p \leq \alpha\), rejeitarmos \(H_0\).
+	\item Se \(p > \alpha\), aceitarmos \(H_0\).
+\end{itemize}
+
+\subsection{Abordagem pelo intervalo de confiança}
+
+\[\beq{ (\hat{p}_1-\hat{p}_2) \pm z_{\frac{1-\alpha}{2}} \sqrt{\frac{\bar{p}(1-\bar{p})}{n_1}+\frac{\bar{p}(1-\bar{p})}{n_2}} }\]
+
+Interpretação:
+
+\begin{itemize}
+	\item se o intervalo contém 0 (zero) há indícios de que as duas proporções são iguais, caso contrário, se o intervalo não contém 0 (zero) pode-se concluir com \( 100(1-\alpha)\% \) de confiança que as duas proporções são diferentes.
+		\item Se os limites do intervalo do confiança apresentam sinal negativo (-) pode-se dizer que a proporção da 2\textsuperscript{a} amostra é maior do que a proporção da 1\textsuperscript{a} amostra.
+	\item Ao contrário, se os limites do intervalo apresentarem sinal positivo (+) conclui-se que a proporção da 1\textsuperscript{a} amostra é maior que a proporção da 2\textsuperscript{a} amostra.
+\end{itemize}
+
+\section{Teste t para Comparação de Duas Médias (Amostras Pareadas)}
+
+Uma amostra pareada corresponde ao levantamento de dados da mesma amostra em duas situações nas quais tenha interferido algum fator cujo efeito deseja-se avaliar (Ex.: Comparar o peso de um grupo de pessoas antes e depois de passarem por uma dieta rigorosa).
+
+Suposições:
+\begin{itemize}
+	\item Deve-se escolher de maneira aleatória duas amostras dependentes de duas populações.
+	\item Ambas as populações devem ter distribuição Normal. Se elas se afastam radicalmente da distribuição Normal, devemos utilizar os métodos não-paramétricos.
+\end{itemize}
+
+\subsection{Abordagem pelo valor p}
+
+\begin{alineas}
+	\item Estabeleça o nível de significância (\(\alpha\)) a ser adotado. Se \(\alpha\) não for fornecido, adotar o valor padrão 0.05.
+	\item Estabelecer as hipóteses:
+		\begin{alineas}
+			\item \(H_0\): Médias pareadas iguais (antes e depois): \(\mu_1 = \mu_2\)
+			\item \(H_1\): Médias pareadas significativamente diferentes\footnote{Nesse material, trataremos somente a hipótese bilateral.}: \(\mu_1 \neq \mu_2\)
+		\end{alineas}
+	\item Encontrar o valor \(\bar{d}\) que é a média das diferenças \(d_i\): 
+
+	\[\beq{ \bar{d} = \frac{\sum{d_i}}{n} }\]
+
+	\item Calcular o desvio padrão \(s_d\) das diferenças \(d_i\):
+
+	\[\beq{ s_d = \sqrt{\frac{n(\sum{d_i^2})(\sum{d_i})^2}{n(n-1)}} }\]	
+	
+	\item Calcular a estatística de teste \(T_p\):
+	
+	\[\beq{ T_p = \frac{\bar{d}}{ \frac{s_d}{\sqrt{n}}} }\]
+	
+	\item Calcular o valor \textbf{p}: \(p = 2 \times P(t>|T_p|) \), com n-1 graus de liberdade.
+
+	\item Conclusão:
+		\begin{alineas}
+			\item Se p \(\leq\) nível de significância (\(\alpha\)), então há indícios para rejeitarmos \(H_0\).
+			\item Se p > nível de significância (\(\alpha\)), então há evidências suficientes para aceitarmos \(H_0\).
+		\end{alineas}
+
+\subsection{Abordagem pelo intervalo de confiança}
+
+\[\beq{ \bar{d} \pm t_{n-1;\frac{\alpha}{2}} \times \frac{s_d}{\sqrt{n}}  }\]
+	
+\end{alineas}
