@@ -280,4 +280,87 @@ Os valores \( F_{n_2-1;n1-1;\frac{\alpha}{2}} \) e \(F_{n_1-1;n2-1;\frac{\alpha}
 \begin{itemize}
 	\item Rejeitar \(H_0\) se \(F < F_L\) ou se \(F>F_R\)
 	\item Caso contrário, não rejeitamos \(H_0\)
-\end{itemize} 
+\end{itemize}
+
+\section{Teste t para Comparação de Duas Médias (Amostras Independentes}
+
+\begin{verbatim}
+	Estratégia sugerida: Python
+\end{verbatim}
+
+O teste t-Student, ou simplesmente teste t, é o método mais utilizado para se avaliarem as diferenças entre as médias de dois grupos para os casos em que as variâncias populacionais são desconhecidas.
+
+
+Suposições:
+\begin{itemize}
+	\item As duas amostras são independentes;
+	\item As duas amostras são extraídas aleatoriamente de populações distribuídas normalmente.
+	\item Caso a suposição de normalidade não seja comprovada, pode-se optar por realizar testes não-paramétricos. Estes não necessitam de pressupostos sobre a distribuição dos dados.
+\end{itemize}
+
+Consideramos dois casos distintos para o teste de hipóteses para comparação de duas médias. O primeiro caso em que as variâncias das populações são desconhecidas, porém iguais (homocedasticidade) e o segundo caso em que as variâncias são desconhecidas e distintas (heterocedasticidade).
+
+\subsection{As duas populações parecem ter variâncias iguais (Homocedásticas)}
+
+Notação:
+\begin{itemize}
+	\item \(x_1\) = média da 1\textsuperscript{a} amostra
+	\item \(x_2\) = média da 2\textsuperscript{a} amostra
+	\item \(n_1\) = tamanho da 1\textsuperscript{a} amostra
+	\item \(n_2\) = tamanho da 2\textsuperscript{a} amostra
+	\item \(s_1^2\) = variância da 1\textsuperscript{a} amostra
+	\item \(s_2^2\) = variância da 2\textsuperscript{a} amostra 
+\end{itemize}
+
+
+Estatística de Teste:
+
+\[\beq{ t_0 = \frac{(\bar{x}_1-\bar{x}_2)}{\sqrt{\frac{s_{comb}^2}{n_1} + \frac{s_{comb}^2}{n_2}}} }\]
+
+A variância combinada \(s_{comb}^2\) calculada a partir da seguinte fórmula:
+
+\[\beq{ s_{comb}^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{(n_1-1)+(n_2-1)}  }\]
+
+Número de graus de liberdade quando as variâncias amostrais são combinadas: \( g.l. = n_1 + n_2 - 2 \)
+
+Conclusão:
+\begin{itemize}
+	\item Se \(p \leq \alpha\), rejeitarmos \(H_0\).
+	\item Se \(p > \alpha\), aceitamos \(H_0\).
+\end{itemize}
+
+Pelo intervalo de confiança:
+
+\[\beq{ (\bar{x}_1 - \bar{x}_2) \pm t_{gl;\frac{\alpha}{2}}\sqrt{\frac{s_{comb}^2}{n_1} + \frac{s_{comb}^2}{n_2}} }\]
+
+Interpretação:
+
+\begin{itemize}
+	\item se o intervalo contém 0 (zero) há indícios de que as duas médias são iguais, caso contrário, se o intervalo não contém 0 (zero) pode-se concluir com \( 100(1-\alpha)\% \) de confiança que as duas médias são diferentes.
+		\item Se os limites do intervalo do confiança apresentam sinal negativo (-) pode-se dizer que a média da 2\textsuperscript{a} amostra é maior do que a média da 1\textsuperscript{a} amostra.
+	\item Ao contrário, se os limites do intervalo apresentarem sinal positivo (+) conclui-se que a média da 1\textsuperscript{a} amostra é maior que a média da 2\textsuperscript{a} amostra.
+\end{itemize}
+
+\subsection{As duas populações parecem ter variâncias desiguais (Heterocedásticas)}
+
+Notação:
+\begin{itemize}
+	\item \(x_1\) = média da 1\textsuperscript{a} amostra
+	\item \(x_2\) = média da 2\textsuperscript{a} amostra
+	\item \(n_1\) = tamanho da 1\textsuperscript{a} amostra
+	\item \(n_2\) = tamanho da 2\textsuperscript{a} amostra
+	\item \(s_1^2\) = variância da 1\textsuperscript{a} amostra
+	\item \(s_2^2\) = variância da 2\textsuperscript{a} amostra 
+\end{itemize}
+
+Estatística de teste:
+
+\[\beq{ t_0 = \frac{(\bar{x}_1-\bar{x}_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} }\]
+
+Número de graus de liberdade (\( g.l.) \) é o menor dos dois: \(n_1 - 1\)  ou  \(n_2 - 1\)
+
+Intervalo de confiança (para hipóteses bilaterais): 
+
+\[\beq{ (\bar{x}_1 - \bar{x}_2) \pm t_{gl;\frac{\alpha}{2}}\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} }\]
+
+A conclusão do teste de hipóteses utilizando o valor p ou o intervalo de confiança deve ser feita da mesma maneira que no caso das homocedásticas.
