@@ -183,5 +183,26 @@ class TestTestesHipoteses(unittest.TestCase):
         self.assertEqual(hip.media_testet_amostras_dependentes(di_med, di_std, n), 2.9573)
 
 
+    # Teste t para duas amostras independentes homocedasticas (media)
+    def test_media_testet_amostras_independentes_homocedasticas(self):
+        x1 = 11.57
+        x2 = 15.38
+        s1 = 4.1**2
+        s2 = 4.3**2
+        n1 = 14
+        n2 = 13
+        self.assertEqual(hip.media_testet_amostras_independentes(x1, x2, n1, n2, s1, s2, True), -2.3568)
+
+
+    # Teste t para duas amostras independentes homocedasticas (media)
+    def test_media_testet_amostras_independentes_heterocedasticas(self):
+        x1 = 40.2
+        x2 = 36.7
+        s1 = 0.7**2
+        s2 = 1.9**2
+        n1 = 20
+        n2 = 15
+        self.assertEqual(hip.media_testet_amostras_independentes(x1, x2, n1, n2, s1, s2, False), 6.7969)
+
 if __name__ == '__main__':
     unittest.main()
