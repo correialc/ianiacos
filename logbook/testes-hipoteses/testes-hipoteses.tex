@@ -53,7 +53,11 @@ muito comuns os valores 0,05 e 0,01;
 \item Formular uma conclusão que descreva a conseqüência prática dos dados e dos cálculos.
 \end{alineas}
 
-\section{Teste z para uma Amostra (\(\sigma\) conhecido)}
+\section{Teste z para a Média (\(\sigma\) conhecido)}
+
+\begin{verbatim}
+	Estratégia sugerida: Geogebra
+\end{verbatim}
 
 O teste z é utilizado em testes de hipóteses para a média quando valor do desvio padrão (\(\sigma\) é conhecido. Identificadas as hipóteses estatísticas (\(H_0\) e \(H_a\)) e definido o nível de significância (\(\alpha\)), podemos proceder ao cálculo da estatística de teste utilizando a fórmula a seguir.
 
@@ -93,7 +97,11 @@ Onde \(\mu_0\) representa o valor da média que está sendo testado, \(\sigma\) 
 
 A correspondência direta entre um intervalo de confiança e um teste de hipótese pode ser feita somente quando o teste é bilateral.
 
-\section{Teste t para uma amostra (\(\sigma\) desconhecido)}
+\section{Teste t para a Média (\(\sigma\) desconhecido)}
+
+\begin{verbatim}
+	Estratégia sugerida: Geogebra (Validação em Python)
+\end{verbatim}
 
 O teste t é utilizado em testes de hipóteses para a média quando valor do desvio padrão (\(\sigma\) é desconhecido. Nesse caso, deve utilizar o desvio padrão amostral (\(s\)) e a distribuição t-Student. Identificadas as hipóteses estatísticas (\(H_0\) e \(H_a\)) e definido o nível de significância (\(\alpha\)), podemos proceder ao cálculo da estatística de teste utilizando a fórmula a seguir.
 
@@ -125,7 +133,11 @@ O valor crítico é obtido na tabela t-Student, a partir do número de graus de 
 
 A correspondência direta entre um intervalo de confiança e um teste de hipótese pode ser feita somente quando o teste é bilateral.
 
-\section{Teste de Hipóteses para a Proporção}
+\section{Teste z para a Proporção}
+
+\begin{verbatim}
+	Estratégia sugerida: Geogebra
+\end{verbatim}
 
 Os testes de hipóteses para proporções são adequados quando os dados sob análise consistem de contagens ou frequências de itens. A finalidade de tais testes é avaliar afirmações sobre a proporção (ou percentagem) de uma população.
 
@@ -142,6 +154,10 @@ Estatística de teste:
 Em muitos aspectos, o teste de hipóteses para uma proporção se assemelha grandemente ao teste z, principalmente pelo fato de que utilizam a mesma distribuição de probabilidades. Dessa forma, a região crítica, o valor crítico e o valor p para o teste de proporção são obtidos exatamente da mesma maneira que o teste z para uma média.
 
 \section{Teste z para Comparação de Duas Proporções}
+
+\begin{verbatim}
+	Estratégia sugerida: Geogebra 
+\end{verbatim}
 
 Um teste z de duas amostras é usado para testar a diferença entre duas proporções \(p_1\) e \(p_2\) quando uma amostra é selecionada aleatoriamente de cada população.
 
@@ -164,10 +180,6 @@ Notação:
 
 \subsection{Abordagem pelo valor p}
 
-\begin{verbatim}
-	Estratégia sugerida: Geogebra 
-\end{verbatim}
-
 Estatística de teste:
 
 \[\beq{ z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\frac{\bar{p}(1-\bar{p})}{n_1}+\frac{\bar{p}(1-\bar{p})}{n_2}} }}\]
@@ -178,15 +190,11 @@ onde, a estimativa ponderada para \(p_1\) e \(p_2\) pode ser obtida por:
 
 Conclusão:
 \begin{itemize}
-	\item Se \(p \leq \alpha\), rejeitarmos \(H_0\).
-	\item Se \(p > \alpha\), aceitarmos \(H_0\).
+	\item Se \(p \leq \alpha\), rejeitamos \(H_0\).
+	\item Se \(p > \alpha\), aceitamos \(H_0\).
 \end{itemize}
 
 \subsection{Abordagem pelo intervalo de confiança}
-
-\begin{verbatim}
-	Estratégia sugerida: Python 
-\end{verbatim}
 
 \[\beq{ (\hat{p}_1-\hat{p}_2) \pm z_{\frac{1-\alpha}{2}} \sqrt{\frac{\bar{p}(1-\bar{p})}{n_1}+\frac{\bar{p}(1-\bar{p})}{n_2}} }\]
 
@@ -200,6 +208,10 @@ Interpretação:
 
 \section{Teste t para Comparação de Duas Médias (Amostras Pareadas)}
 
+\begin{verbatim}
+	Estratégia sugerida: Python 
+\end{verbatim}
+
 Uma amostra pareada corresponde ao levantamento de dados da mesma amostra em duas situações nas quais tenha interferido algum fator cujo efeito deseja-se avaliar (Ex.: Comparar o peso de um grupo de pessoas antes e depois de passarem por uma dieta rigorosa).
 
 Suposições:
@@ -209,10 +221,6 @@ Suposições:
 \end{itemize}
 
 \subsection{Abordagem pelo valor p}
-
-\begin{verbatim}
-	Estratégia sugerida: Python 
-\end{verbatim}
 
 \begin{alineas}
 	\item Estabeleça o nível de significância (\(\alpha\)) a ser adotado. Se \(\alpha\) não for fornecido, adotar o valor padrão 0.05.
@@ -242,10 +250,6 @@ Suposições:
 		\end{alineas}
 
 \subsection{Abordagem pelo intervalo de confiança}
-
-\begin{verbatim}
-	Estratégia sugerida: Python 
-\end{verbatim}
 
 \[\beq{ \bar{d} \pm t_{n-1;\frac{\alpha}{2}} \times \frac{s_d}{\sqrt{n}}  }\]
 	
