@@ -43,6 +43,13 @@ class TestNormalDist(unittest.TestCase):
         x = 165.6
         z = nm.reduzir_normal_padrao(x, med, dp) 
         self.assertEqual(z, 1.28)
+    
+    def test_reverter_reducao_normal_padrao(self):
+        med = 130
+        dp = 20
+        z = 0.67
+        x = nm.reverter_reducao_normal_padrao(z, med, dp) 
+        self.assertEqual(x, 143.4)
 
 
 # Inferencia Estatistica (Media)

@@ -9,6 +9,10 @@ def reduzir_normal_padrao(x, med, dp):
     return round((x - med)/dp,4)
 
 
+def reverter_reducao_normal_padrao(z, med, dp):
+    return round(z*dp+med, 4)
+
+
 # Plota a curva da distribuição normal preenchendo um intervalo de probabilidade de z1 a z2
 def plotar_normal(z1, z2):
     # Fonte: Adaptada de Peter Kazarinoff 
